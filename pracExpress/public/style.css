@@ -1,127 +1,137 @@
-/* 기본 스타일 설정 */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --danger-color: #e74c3c;
+  }
+  
+  * {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
   }
   
-  /* 컨테이너 스타일 */
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
   .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
   }
   
-  /* 헤더 스타일 */
   header {
-    background: #333;
-    color: #fff;
-    padding: 15px 0;
+    background-color: var(--primary-color);
+    color: white;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
   }
   
   header h1 {
-    margin: 0;
     font-size: 2.5rem;
+    font-weight: 700;
   }
   
-  /* 링크 스타일 */
+  h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
   a {
-    color: #3498db;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.3s ease;
   }
   
   a:hover {
-    color: #2980b9;
+    color: var(--secondary-color);
   }
   
-  /* 게시글 목록 스타일 */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .btn-danger {
+    background-color: var(--danger-color);
+  }
+  
+  .btn-danger:hover {
+    background-color: #c0392b;
+  }
+  
   ul.posts {
     list-style: none;
-    padding: 0;
   }
   
   ul.posts li {
-    background: #fff;
-    margin: 10px 0;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   ul.posts li a {
-    font-size: 1.25rem;
-    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
   }
   
-  ul.posts li form {
-    margin-top: 10px;
-  }
-  
-  ul.posts li button {
-    background: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.875rem;
-  }
-  
-  ul.posts li button:hover {
-    background: #c0392b;
-  }
-  
-  /* 폼 스타일 */
   form {
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 10px 0;
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
   form label {
     display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
   }
   
   form input,
   form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  form button {
-    background: #3498db;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 5px;
     font-size: 1rem;
   }
   
-  form button:hover {
-    background: #2980b9;
-  }
-  
   form textarea {
+    min-height: 150px;
     resize: vertical;
   }
   
-  /* 페이지 제목 및 기타 텍스트 */
-  h1, h2, h3 {
-    color: #333;
-    font-weight: normal;
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
   }
