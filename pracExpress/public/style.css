@@ -1,0 +1,127 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* 컨테이너 스타일 */
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  /* 헤더 스타일 */
+  header {
+    background: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  /* 링크 스타일 */
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #2980b9;
+  }
+  
+  /* 게시글 목록 스타일 */
+  ul.posts {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.posts li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  ul.posts li a {
+    font-size: 1.25rem;
+    color: #333;
+  }
+  
+  ul.posts li form {
+    margin-top: 10px;
+  }
+  
+  ul.posts li button {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+  
+  ul.posts li button:hover {
+    background: #c0392b;
+  }
+  
+  /* 폼 스타일 */
+  form {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 10px 0;
+  }
+  
+  form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  form button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  form button:hover {
+    background: #2980b9;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  /* 페이지 제목 및 기타 텍스트 */
+  h1, h2, h3 {
+    color: #333;
+    font-weight: normal;
+  }

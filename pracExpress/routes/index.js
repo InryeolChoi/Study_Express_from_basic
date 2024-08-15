@@ -23,7 +23,11 @@ router.post('/create', (req, res) => {
 // 게시글 수정 폼
 router.get('/edit/:id', (req, res) => {
     const post = postModel.getPostById(req.params.id);
-    res.render('edit', { post });
+    if (post) {
+        res.render('edit', { post });
+    } else {
+        res.status(404).send('Post not found');
+    }
 })
 
 // 게시글 수정

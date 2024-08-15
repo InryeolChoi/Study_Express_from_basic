@@ -12,7 +12,7 @@ function readData() {
 }
 
 // 파일에 데이터 저장
-function writeData() {
+function writeData(data) {
     fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
 }
 
@@ -22,6 +22,14 @@ export function getPosts() {
 }
 
 // 특정 게시글 조회
+export function getPostById(id) {
+    const posts = readData();
+    return posts.find(post => post.id === parseInt(id))
+}
+
+
+
+// 게시글 만들기
 export function createPost(newPost) {
     const posts = readData();
     newPost.id = posts.length ? posts[posts.length - 1].id + 1 : 1;

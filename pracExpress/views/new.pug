@@ -4,7 +4,7 @@ block content
   h1 새 게시글 작성
   form(action='/create', method='post')
     label(for='title') 제목:
-    input(type='text', id='title', name='title')
+    input(type='text', id='title', name='title', required=true)
     label(for='content') 내용:
-    textarea(id='content', name='content')
+    textarea(id='content', name='content', rows='5', required=true)
     button(type='submit') 작성
