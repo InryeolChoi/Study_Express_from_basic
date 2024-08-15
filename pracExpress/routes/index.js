@@ -37,9 +37,9 @@ router.put('/edit/:id', (req, res) => {
 })
 
 // 게시글 삭제
-router.delete('/delete/:id', (res, req) => {
+router.delete('/delete/:id', (req, res) => {
     postModel.deletePost(req.params.id);
     res.redirect('/');
-})
+  });
 
-export default router;
+  export default router;
