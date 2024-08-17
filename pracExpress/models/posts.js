@@ -1,10 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const dataPath = path.join(__dirname, '../data/posts.json');
+import { initDatabase } from '../db.js';
 
 // 파일에서 데이터 읽어오기
 function readData() {
@@ -17,26 +11,25 @@ function writeData(data) {
 }
 
 // 모든 게시글 조회
-export function getPosts() {
-    return readData();
+export async function getPosts() {
+    const db = await initDatabase();
+    return await db.all('SELECT * FROM posts ORDER BY created_at DESC');
 }
-
+  
 // 특정 게시글 조회
-export function getPostById(id) {
-    const posts = readData();
-    return posts.find(post => post.id === parseInt(id))
+export async function getPostById(id) {
+    const db = await initDatabase();
+    return await db.get('SELECT * FROM posts WHERE id = ?', id);
 }
-
+  
 
 
 // 게시글 만들기
-export function createPost(newPost) {
-    const posts = readData();
-    newPost.id = posts.length ? posts[posts.length - 1].id + 1 : 1;
-    posts.push(newPost);
-    writeData(posts);
+export async function createPost(title, content) {
+    const db = await initDatabase();
+    await db.run('INSERT INTO posts (title, content) VALUES (?, ?)', [title, content]);
 }
-
+  
 // 게시글 수정
 export function updatePost(id, updatedPost) {
     const posts = readData();
@@ -48,8 +41,7 @@ export function updatePost(id, updatedPost) {
 }
 
 // 게시글 삭제
-export function deletePost(id) {
-    const posts = readData();
-    const filteredPosts = posts.filter(post => post.id !== parseInt(id));
-    writeData(filteredPosts);
-} 
+export async function deletePost(id) {
+    const db = await initDatabase();
+    await db.run('DELETE FROM posts WHERE id = ?', id);
+}

@@ -1,15 +1,11 @@
 APP_NAME=my-express-app
 DOCKER_COMPOSE=docker-compose
 
-all:
-	build
-	up
-
 build:
 	@docker build -t $(APP_NAME) .
 
 up:
-	@$(DOCKER_COMPOSE) up --build
+	@$(DOCKER_COMPOSE) up -d --build
 
 down:
 	@$(DOCKER_COMPOSE) down

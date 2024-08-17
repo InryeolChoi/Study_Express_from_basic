@@ -1,10 +1,8 @@
 services:
   app:
+    image: pracexpress-app
     build: .
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
-      - /app/node_modules
-    environment:
-      NODE_ENV: development
+      - ./data:/app/data  # SQLite 데이터베이스 파일을 로컬에 마운트
