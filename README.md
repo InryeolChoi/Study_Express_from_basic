@@ -1,4 +1,4 @@
-# Study_Express_from_basic
+# Study_Express_with_DB
 
 ## 목표
 1. Express.js의 기본기 배워보기
