@@ -44,9 +44,10 @@ router.get('/edit/:id', async (req, res) => {
   
 
 router.post('/create', async (req, res) => {
-  const { title, content } = req.body;
-  await createPost(title, content);
-  res.redirect('/');
+    console.log(`Received Create request`);
+    const { title, content } = req.body;
+    await createPost(title, content);
+    res.redirect('/');
 });
 
 router.delete('/delete/:id', async (req, res) => {
