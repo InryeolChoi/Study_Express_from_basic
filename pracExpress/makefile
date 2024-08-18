@@ -1,30 +1,20 @@
-APP_NAME=my-express-app
-DOCKER_COMPOSE=docker-compose
+APP_NAME=prac
 
-build:
-	@docker build -t $(APP_NAME) .
-
-up:
-	@$(DOCKER_COMPOSE) up -d --build
-
-down:
-	@$(DOCKER_COMPOSE) down
+all: start
 
 start:
-	@$(DOCKER_COMPOSE) up -d
+	@docker build -t $(APP_NAME) .
+	@docker-compose up -d
 
-stop:
-	@$(DOCKER_COMPOSE) stop
+down:
+	@docker-compose down
 
-logs:
-	@$(DOCKER_COMPOSE) logs -f
-
-restart:
-	@$(DOCKER_COMPOSE) restart
-
-clean:
+clean: down
+	@docker image prune
 	@docker system prune -f
 	@docker volume prune -f
+	@docker builder prune -f
+	@docker rmi -f $$(docker images -a -q) || true
 
-test:
-	@$(DOCKER_COMPOSE) run --rm app npm test
+delete: clean
+	@docker buildx prune -f

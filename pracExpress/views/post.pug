@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h2 #{post.title}
+  p #{post.content}
+  .actions
+    a(href='/', class='btn') 목록으로 돌아가기
+    a(href=`/edit/${post.id}`, class='btn btn-primary', style='margin-left: 10px;') 수정하기

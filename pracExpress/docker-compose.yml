@@ -1,8 +1,8 @@
 services:
   app:
-    image: pracexpress-app
+    image: prac
     build: .
     ports:
       - "3000:3000"
     volumes:
-      - ./data:/app/data  # SQLite 데이터베이스 파일을 로컬에 마운트
+      - ./data:/app/data
