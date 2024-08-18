@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=password
+      - DB_NAME=practicedb
+    depends_on:
+      - db
+    entrypoint: ["/bin/sh", "-c", "until nc -z db 3306; do sleep 1; done; npm start"]
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  db:
+    image: mariadb:10.6
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: practicedb
+    ports:
+      - "3306:3306"
