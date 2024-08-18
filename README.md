@@ -20,5 +20,4 @@
 ## pracExpress2
 > 리액트와 같이 써보는 익스프레스
 * Express.js로 SPA(Single Page Application) 만들어보기
-* 로그인 기능이 들어간 todolist + Gaming 구축
-* 리액트 연습도 겸함.
+* 간단한 사이트 구축 + 리액트 연습도 겸함.
