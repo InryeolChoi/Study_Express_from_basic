@@ -12,8 +12,14 @@ stop:
 down : stop
 	docker-compose down
 
-logs :
-	docker-compose logs -f
+logs:
+	docker-compose logs $(filter-out $@,$(MAKECMDGOALS)) -f
+
+inside:
+	docker exec -it $(filter-out $@,$(MAKECMDGOALS)) /bin/sh
+
+%:
+	@:
 
 clean: down
 	@docker image prune
@@ -26,6 +32,6 @@ delete: clean
 	@docker buildx prune -f
 	@docker network prune -f
 
-re: down start
+re: down build up
 
 .PHONY: build up down logs clean delete re

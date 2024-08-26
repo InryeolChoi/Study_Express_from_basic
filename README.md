@@ -19,5 +19,6 @@
 ## pracExpress2
 > 리액트, 도커, mariaDB와 같이 써보는 익스프레스
 * Express.js로 SPA(Single Page Application) 만들어보기
+* 데이터베이스, 비즈니스 로직에 관한 설명 작성.
 * 간단한 사이트 구축 + 도커 연습 + 리액트 연습도 겸함.
 * mariaDB를 실제로 써보는 연습.

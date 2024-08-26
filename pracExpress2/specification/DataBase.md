@@ -11,7 +11,6 @@
 * email: VARCHAR(100), UNIQUE
 ```
 
-
 ## 2. 게시글 모델 (Post)
 * 테이블 이름: posts
 * 컬럼:
@@ -23,5 +22,3 @@
 * created_at: DATETIME, DEFAULT CURRENT_TIMESTAMP
 * updated_at: DATETIME, DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ```
-
-
