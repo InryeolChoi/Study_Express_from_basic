@@ -1,4 +1,4 @@
-# Study_Express_with_DB
+# Study_Express_from_basic
 
 ## 목표
 1. Express.js의 기본기 배워보기
@@ -15,10 +15,3 @@
 > 서버 사이드 렌더링을 통한 Express.js 연습
 * 템플릿 엔진를 이용한 렌더링
 * 간단한 사이트 구축
-
-## pracExpress2
-> 리액트, 도커, mariaDB와 같이 써보는 익스프레스
-* Express.js로 SPA(Single Page Application) 만들어보기
-* 데이터베이스, 비즈니스 로직에 관한 설명 작성.
-* 간단한 사이트 구축 + 도커 연습 + 리액트 연습도 겸함.
-* mariaDB를 실제로 써보는 연습.
